@@ -1,0 +1,129 @@
+@import '@/lib/reset.scss';
+
+html, body, #root, .container {
+    @include rect(100%, 100%);
+}
+
+.container {
+   @include flexbox();
+   @include flex-direction(column);
+   .main{
+     @include flex();
+     @include rect(100%, auto);
+     @include flexbox();
+     @include flex-direction(column);
+     header{
+     		@include rect(100%, 0.45rem);
+     		@include background-color(#E4366B);
+       @include flexbox();
+       @include text-color(#fff);
+
+        .left{
+          @include rect(0.5rem, auto);
+          @include flexbox();
+          @include flex-direction(column);
+          @include justify-content();
+          @include align-items();
+        }
+        .center{
+          @include flex();
+          @include rect(auto, 100%);
+          @include flexbox();
+          @include flex-direction(column);
+          @include justify-content();
+          @include align-items();
+          @include ellipsis(null, 1);
+        }
+        .right{
+          @include rect(0.5rem, auto);
+          @include flexbox();
+          @include flex-direction(column);
+          @include justify-content();
+          @include align-items();
+        }
+     }
+     .content{
+     		@include flex();
+        @include rect(100%, auto);
+     		@include overflow();
+        @include background-color(#fff);
+        
+        .prolist {
+          @include rect(100%, 100%);
+          li{
+            @include rect(100%, 1rem);
+            @include border(0 0 1px 0, #ccc);
+            img{
+              @include rect(0.9rem, 0.9rem);
+            }
+          }
+        }
+        .kindMenu{
+          @include wrap(false);
+          @include rect(auto, 0.4rem);
+          @include overflow();
+
+          li{
+            @include display(inline-block);
+            @include padding(0 5px); 
+            @include line-height(0.4rem);
+            @include border(0 0 1px 0, #ccc);
+            
+            &.active{
+              @include text-color(#E4366B);
+            }
+          }
+        }
+     }
+   }
+   footer{
+       @include rect(100%, 0.5rem);
+       @include background-color(#eee);
+       
+       ul{
+         @include rect(100%, 100%);
+         @include flexbox();
+         li{
+           @include flex();
+           @include rect(auto, 100%);
+           
+           a{
+             @include rect(100%, 100%);
+             @include text-color(#666);
+             @include flexbox();
+              @include flex-direction(column);
+              @include justify-content();
+              @include align-items();
+              
+              &.active{
+                @include text-color(#E4366B);
+              }
+              i{
+                @include font-size(0.22rem)
+   
+              }
+              p{
+                @include font-size(0.12rem)
+              }
+           }
+         }
+       }
+   }
+}
+
+.fade-enter {
+  opacity: 0;
+  z-index: 1;
+}
+
+.fade-enter.fade-enter-active {
+  opacity: 1;
+  transition: opacity 5s ease-in;
+}
+
+a {
+  @include text-color(#666);
+  &.active{
+    @include text-color(#E4366B);
+  }
+}
